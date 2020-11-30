@@ -1,0 +1,17 @@
+.carrousel {
+  display: flex;
+}
+.carrousel__next,
+.carrousel__prev {
+  flex: 1;
+}
+.carrousel__items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 12;
+}
+
+.carrousel__items > li {
+  flex: 1;
+}

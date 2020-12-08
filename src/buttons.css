@@ -15,5 +15,13 @@
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: var(--light);
+  box-shadow: var(--shadow-level-1);
+  transition: var(--animate-shadow);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-level-3);
 }

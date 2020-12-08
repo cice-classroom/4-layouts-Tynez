@@ -1,11 +1,22 @@
 .carrousel {
   display: flex;
-  margin-top: 50px;
+  margin-top: 3rem;
+  width: 100vw;
 }
 .carrousel__next,
 .carrousel__prev {
-  flex: 1;
+  /*flex: 1;*/
+  background-color: transparent;
+  border-width: 0;
+  cursor: pointer;
+  padding: 0 1rem;
 }
+
+.carrousel__next:hover,
+.carrousel__prev:hover {
+  color: var(--primary-dark);
+}
+
 .carrousel__items {
   display: flex;
   flex-direction: row;
@@ -16,4 +27,10 @@
 
 .carrousel__items > li {
   flex: 1;
+  padding: 0 0.5rem;
+}
+
+.carrousel__items > li > img {
+  width: 100%;
+  height: auto;
 }

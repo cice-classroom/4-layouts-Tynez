@@ -1,15 +1,25 @@
 @import url(./carrousel.css);
+@import url(./buttons.css);
 /**/
 :root {
-  --white: #f9f9f9;
-  --light-gray: hsl(0, 0%, 93%);
-  --black: #2c2c2c;
+  /* Color */
+  --white: hsl(0, 0%, 100%);
+  --light: hsl(0, 0%, 98%);
+  --light-gray: hsl(60, 17%, 95%);
+  --dark: hsl(0, 5%, 13%);
+  --primary: hsl(357, 92%, 47%);
+  --primary-dark: hsl(357, 73%, 42%);
 
-  --background-color: var(--light-gray);
-  --foreground-color: var(--black);
+  --background-color: var(--light);
+  --foreground-color: var(--dark);
 
-  --header-background-color: hsl(0, 0%, 97%);
+  --header-background-color: var(--primary-dark);
 
+  /* Typography */
+  --base-font: 'Lato', sans-serif;
+  --header-font: 'Bebas Neue', cursive;
+
+  /* Shadows */
   --shadow-level-1: 0 2px 2px 0 hsla(0, 0%, 0%, 0.14), 0 3px 1px -2px hsla(0, 0%, 0%, 0.12),
     0 1px 5px 0 hsla(0, 0%, 0%, 0.2);
   --shadow-level-2: 0 4px 5px 0 hsla(0, 0%, 0%, 0.14), 0 1px 10px 0 hsla(0, 0%, 0%, 0.12),
@@ -35,6 +45,20 @@
 
 body {
   background-color: var(--background-color);
+  font-family: var(--base-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+}
+
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -64,11 +88,40 @@ body {
   flex: var(--wide-screen);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo,
 .header__aux {
   flex: var(--white-column);
+}
+
+.header__logo img {
+  height: 2rem;
+}
+
+.header__searchbar {
+  position: relative;
+  height: 2rem;
+  width: 30%;
+  padding: 0 1rem;
+  border-radius: 1000px;
+  border-style: solid;
+  border-color: var(--light);
+}
+
+.header__searchbar:focus {
+  outline: none;
+  box-shadow: var(--shadow-level-2);
+}
+
+.header__login {
+  color: var(--light);
+  font-weight: bold;
+}
+
+.header__login:hover {
+  color: var(--light-gray);
 }
 
 #main {
@@ -78,11 +131,6 @@ body {
 
 .footer__content {
   min-height: 3.125rem;
-}
-
-#first-section {
-  background-color: white;
-  text-align: center;
 }
 
 .wide-screen {
@@ -107,6 +155,21 @@ body {
 .box {
   background: gray;
 }
+
+#first-section,
+#second-section,
+#third-section,
+#fourth-section,
+#fifth-section {
+  padding: 3rem 0;
+}
+
+#first-section {
+  background-color: white;
+  text-align: center;
+  padding: 3rem 0;
+}
+
 .second-section__content {
   width: 100%;
   display: grid;
@@ -116,8 +179,13 @@ body {
   row-gap: 15px;
   grid-template-areas:
     'a  a  a  b  c  c'
-    'd  e  f  b  g  h'
+    'd  f  j  b  g  h'
     'i  e  j  k  l  m';
+}
+
+.second-section__content img {
+  width: 100%;
+  height: auto;
 }
 
 .square::after {
@@ -125,57 +193,85 @@ body {
   padding-bottom: 100%;
   display: block;
 }
+.second-section__content > article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-level-1);
+  transition: box-shadow 0.2s ease-out;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+
+.second-section__content > article:hover {
+  box-shadow: var(--shadow-level-3);
+}
 
 .second-section__content > article:nth-child(1) {
   grid-area: a;
+  background-image: url('./img/cartel/how-i-met-your-mother.jpg');
 }
 
 .second-section__content > article:nth-child(2) {
   grid-area: b;
+  background-image: url('./img/cartel/stranger-things.jpg');
 }
 
 .second-section__content > article:nth-child(3) {
   grid-area: c;
+  background-image: url('./img/cartel/gambito-dama.jpg');
 }
 
 .second-section__content > article:nth-child(4) {
   grid-area: d;
+  background-image: url('./img/cartel/peaky-blinders.jpeg');
 }
 
 .second-section__content > article:nth-child(5) {
   grid-area: e;
+  background-image: url('./img/cartel/sherlock.jpg');
 }
 
 .second-section__content > article:nth-child(6) {
   grid-area: f;
+  background-image: url('./img/cartel/big-bang-theory.jpg');
 }
 
 .second-section__content > article:nth-child(7) {
   grid-area: g;
+  background-image: url('./img/cartel/breaking-bad.jpg');
+  background-position: center right;
 }
 
 .second-section__content > article:nth-child(8) {
   grid-area: h;
+  background-image: url('./img/cartel/house.jpg');
 }
 
 .second-section__content > article:nth-child(9) {
   grid-area: i;
+  background-image: url('./img/cartel/friends.jpg');
 }
 
 .second-section__content > article:nth-child(10) {
   grid-area: j;
+  background-image: url('./img/cartel/the-witcher.jpg');
 }
 
 .second-section__content > article:nth-child(11) {
   grid-area: k;
+  background-image: url('./img/cartel/hill-house.jpg');
 }
 
 .second-section__content > article:nth-child(12) {
   grid-area: l;
+  background-image: url('./img/cartel/Anne-with-an-E-ppal.jpg');
 }
 
 .second-section__content > article:nth-child(13) {
   grid-area: m;
+  background-image: url('./img/cartel/modern-family.jpg');
 }
 
 #third-section {

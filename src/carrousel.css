@@ -1,5 +1,6 @@
 .carrousel {
   display: flex;
+  margin-top: 50px;
 }
 .carrousel__next,
 .carrousel__prev {
@@ -10,6 +11,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex: 12;
+  overflow-x: scroll;
 }
 
 .carrousel__items > li {

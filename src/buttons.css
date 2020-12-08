@@ -1,2 +1,19 @@
 :root {
 }
+.btn {
+  line-height: normal;
+  padding: 7px 17px;
+  font-weight: 400;
+  font-size: 1rem;
+  border-radius: 3px;
+  border-style: solid;
+  cursor: pointer;
+}
+.btn-white {
+  background-color: var(--light);
+  border-color: var(--light);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+}
